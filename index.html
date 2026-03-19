@@ -89,6 +89,28 @@
       padding: 28px 0 20px;
     }
 
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1.4fr 0.9fr;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .hero-media {
+      justify-self: end;
+    }
+
+    .hero-photo {
+      width: 100%;
+      max-width: 260px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      display: block;
+    }
+
     h1, h2, h3 {
       margin: 0 0 12px;
       line-height: 1.15;
@@ -473,6 +495,9 @@
       .explorer-card[data-type="book"] { grid-column: span 12; width: 100%; }
       .explorer-card[data-type="article"] { grid-column: span 12; width: 100%; }
       .explorer-card[data-type="podcast"] { grid-column: span 12; width: 100%; }
+      .hero-layout { grid-template-columns: 1fr; }
+      .hero-media { justify-self: start; }
+      .hero-photo { max-width: 180px; }
       .section { padding: 24px 0; }
       .hero { padding-top: 24px; }
       .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -507,12 +532,19 @@
   </nav>
   <main class="container">
     <section id="hero" class="hero section">
-      <div class="kicker">Portfolio</div>
-      <h1>I Turn Emerging Tech Into Clear Market Advantage</h1>
-      <p class="lede">Co-host of the Impact Quantum Podcast, host of Women in Quantum, and creator behind the content engine at ImpactQuantum.com translating AI and quantum complexity into actionable insight.</p>
-      <div class="cta-row">
-        <a class="btn primary" href="https://impactquantum.com/GlobalReport/" target="_blank" rel="noopener noreferrer">Explore the Quantum Global Report</a>
-        <a class="btn secondary" href="https://www.linkedin.com/newsletters/techwhispers-7066474645234839552/" target="_blank" rel="noopener noreferrer">Read Tech Whispers on LinkedIn</a>
+      <div class="hero-layout">
+        <div>
+          <div class="kicker">Portfolio</div>
+          <h1>I Turn Emerging Tech Into Clear Market Advantage</h1>
+          <p class="lede">Co-host of the Impact Quantum Podcast, host of Women in Quantum, and creator behind the content engine at ImpactQuantum.com translating AI and quantum complexity into actionable insight.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="https://impactquantum.com/GlobalReport/" target="_blank" rel="noopener noreferrer">Explore the Quantum Global Report</a>
+            <a class="btn secondary" href="https://www.linkedin.com/newsletters/techwhispers-7066474645234839552/" target="_blank" rel="noopener noreferrer">Read Tech Whispers on LinkedIn</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img class="hero-photo" src="candace.jpg" alt="Candace Gillhoolley portrait" loading="lazy" />
+        </div>
       </div>
       <p class="support">Montreal, Canada | 15+ years in audience, content, and growth marketing | 4 published books | Co-host, Impact Quantum Podcast | Host, Women in Quantum</p>
     </section>
