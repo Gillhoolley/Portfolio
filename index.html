@@ -1,0 +1,917 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Candace Gillhoolley | Portfolio</title>
+  <meta name="description" content="Candace Gillhoolley portfolio: quantum, AI, thought leadership, podcasting, and strategic content systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #eef4ff;
+      --paper: #f8fbff;
+      --ink: #13233f;
+      --muted: #2f4566;
+      --accent: #1d4ed8;
+      --accent-2: #0f5e9c;
+      --line: #cddbf5;
+      --card: #fff;
+      --shadow: 0 10px 30px rgba(30, 29, 26, 0.06);
+      --radius: 16px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at 8% -12%, #c8e1ff 0, transparent 40%),
+                  radial-gradient(circle at 92% -2%, #dbeafe 0, transparent 36%),
+                  var(--bg);
+      color: var(--ink);
+      font-family: "Manrope", "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(239, 245, 255, 0.92);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .top-nav .container {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 10px 0;
+    }
+
+    .top-nav a {
+      color: var(--ink);
+      font-size: 0.86rem;
+      font-weight: 700;
+      padding: 6px 10px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+    }
+
+    .top-nav a:hover {
+      text-decoration: none;
+      border-color: var(--line);
+      background: #fff;
+    }
+
+    .container {
+      width: min(var(--max), 92vw);
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 28px 0;
+      border-top: 1px solid var(--line);
+      scroll-margin-top: 72px;
+    }
+
+    .hero {
+      border-top: 0;
+      padding: 28px 0 20px;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 12px;
+      line-height: 1.15;
+      color: #171612;
+    }
+
+    h1, h2 {
+      font-family: "Fraunces", Georgia, serif;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: clamp(1.18rem, 2.8vw, 2.25rem);
+      max-width: 14ch;
+    }
+
+    h2 {
+      font-size: clamp(1.2rem, 2.35vw, 1.95rem);
+    }
+
+    .lede {
+      font-size: clamp(0.98rem, 1.6vw, 1.12rem);
+      color: var(--muted);
+      max-width: 70ch;
+      margin-bottom: 14px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 14px 0 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn.secondary {
+      border-color: var(--line);
+      color: var(--ink);
+      background: #fff;
+    }
+
+    .btn:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 22px rgba(30, 29, 26, 0.1);
+    }
+
+    .support {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .badge {
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    .card {
+      grid-column: span 6;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 26px rgba(30, 29, 26, 0.09);
+    }
+
+    .card h3 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+
+    .card p { color: var(--muted); margin-top: 0; }
+
+    .book-thumb {
+      width: 100%;
+      max-width: 180px;
+      height: auto;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .podcast-thumb {
+      width: 100%;
+      max-width: 180px;
+      height: auto;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .list li { margin-bottom: 8px; }
+
+    .kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--accent-2);
+      margin-bottom: 10px;
+    }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+    }
+
+    .filter-btn.is-active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .filter-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(30, 29, 26, 0.08);
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .metric {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.25rem;
+      font-family: "Fraunces", Georgia, serif;
+      margin-bottom: 4px;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 10px;
+    }
+
+    .timeline details {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .timeline summary {
+      cursor: pointer;
+      font-weight: 800;
+      color: #1b3d39;
+    }
+
+    .timeline p {
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    .career-strip {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .career-node {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--accent);
+      border-radius: 12px;
+      padding: 12px 14px;
+      box-shadow: var(--shadow);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .career-node:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 26px rgba(30, 29, 26, 0.09);
+    }
+
+    .career-node .year {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      font-weight: 800;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .career-node strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .skill-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 8px 0 16px;
+    }
+
+    .skill-btn {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      padding: 8px 12px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+    }
+
+    .skill-btn.is-active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .skill-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(30, 29, 26, 0.08);
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    summary:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 6px;
+    }
+
+    .skill-panel {
+      display: none;
+    }
+
+    .skill-panel.is-active {
+      display: block;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .explorer-card {
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .explorer-card[data-type="book"] {
+      grid-column: span 3;
+      width: 100%;
+    }
+
+    .explorer-card[data-type="article"] {
+      grid-column: span 3;
+      width: 100%;
+    }
+
+    .explorer-card[data-type="podcast"] {
+      grid-column: span 3;
+      width: 100%;
+    }
+
+    .explorer-card[hidden] {
+      display: none;
+    }
+
+    .pill {
+      display: inline-block;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 8px;
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+    }
+
+    details.card-more summary {
+      list-style: none;
+      cursor: pointer;
+      color: var(--accent);
+      font-weight: 700;
+      margin-top: 10px;
+    }
+
+    details.card-more summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.card-more p {
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+
+    footer {
+      padding: 52px 0 64px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .card { grid-column: span 12; }
+      .explorer-card[data-type="book"] { grid-column: span 12; width: 100%; }
+      .explorer-card[data-type="article"] { grid-column: span 12; width: 100%; }
+      .explorer-card[data-type="podcast"] { grid-column: span 12; width: 100%; }
+      .section { padding: 24px 0; }
+      .hero { padding-top: 24px; }
+      .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal,
+      .reveal.is-visible {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav" aria-label="Page sections">
+    <div class="container">
+      <a href="#hero">Top</a>
+      <a href="#why">Why Me</a>
+      <a href="#flagship">Global Report</a>
+      <a href="#newsletter">Tech Whispers</a>
+      <a href="#explorer">Content Explorer</a>
+      <a href="#career">Career</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Capabilities</a>
+      <a href="#proof">Proof</a>
+      <a href="resume.html" target="_blank" rel="noopener noreferrer">Resume</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+  <main class="container">
+    <section id="hero" class="hero section">
+      <div class="kicker">Portfolio</div>
+      <h1>I Turn Emerging Tech Into Clear Market Advantage</h1>
+      <p class="lede">Co-host of the Impact Quantum Podcast, host of Women in Quantum, and creator behind the content engine at ImpactQuantum.com translating AI and quantum complexity into actionable insight.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="https://impactquantum.com/GlobalReport/" target="_blank" rel="noopener noreferrer">Explore the Quantum Global Report</a>
+        <a class="btn secondary" href="https://www.linkedin.com/newsletters/techwhispers-7066474645234839552/" target="_blank" rel="noopener noreferrer">Read Tech Whispers on LinkedIn</a>
+      </div>
+      <p class="support">Montreal, Canada | 15+ years in audience, content, and growth marketing | 4 published books | Co-host, Impact Quantum Podcast | Host, Women in Quantum</p>
+    </section>
+
+    <section id="credibility" class="section">
+      <div class="kicker">Credibility</div>
+      <h2>Where Strategy Meets Signal</h2>
+      <p class="lede">15+ years in EdTech, publishing, and media—now focused on AI and quantum, building go-to-market narratives and audience engines through LinkedIn, Tech Whispers, and Impact Quantum.</p>
+      <div class="badge-row">
+        <span class="badge">Newsletter Author</span>
+        <span class="badge">4x Published Author</span>
+        <span class="badge">Podcast Co-host & Producer</span>
+        <span class="badge">Quantum Market Analyst</span>
+      </div>
+    </section>
+
+    <section id="why" class="section">
+      <div class="kicker">Why I’m Different</div>
+      <h2>I Turn Complex Technology Into Scalable Growth Systems</h2>
+      <p class="lede">Most marketers specialize in one area—strategy, content, or distribution. I build and operate the full system end-to-end: transforming complex ideas into clear narratives, credible positioning, and sustained audience growth.</p>
+      <ul class="list">
+        <li>Translate deep-tech into business value → making AI and quantum accessible to buyers, partners, and stakeholders</li>
+        <li>Bridge strategy and execution → from narrative development to hands-on campaign and content delivery</li>
+        <li>Build content engines, not one-off assets → podcasts, newsletters, and multi-channel distribution systems</li>
+        <li>Drive consistency at scale → creating, scheduling, and distributing content that compounds audience and engagement over time</li>
+      </ul>
+    </section>
+
+    <section id="career" class="section">
+      <div class="kicker">Career Highlights</div>
+      <h2>Year-by-Year Momentum</h2>
+      <p class="lede">A quick timeline of growth across media, community, and revenue-focused marketing leadership.</p>
+      <div class="career-strip">
+        <article class="career-node">
+          <span class="year">2024-Present</span>
+          <strong>Data-Driven Media</strong>
+          <span>Delivered 18% retention growth through segmentation, analytics, and personalized engagement systems.</span>
+        </article>
+        <article class="career-node">
+          <span class="year">2023-2024</span>
+          <strong>Kubuntu Focus</strong>
+          <span>Scaled partner and community marketing programs for B2B technical and developer audiences.</span>
+        </article>
+        <article class="career-node">
+          <span class="year">2022-2023</span>
+          <strong>Linux Foundation</strong>
+          <span>Led PR and community relations to improve technical audience adoption and global engagement.</span>
+        </article>
+        <article class="career-node">
+          <span class="year">2010-2022</span>
+          <strong>Manning Publications</strong>
+          <span>Built full-funnel content and growth programs across SEO, paid, webinars, and lifecycle campaigns.</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="flagship" class="section">
+      <div class="kicker">Flagship Platform</div>
+      <h2>Quantum Global Report: Turning Fragmented Signals into Decision-Ready Insight</h2>
+      <p class="lede">I designed and built an interactive platform that translates complex, global quantum market data into clear, actionable intelligence for operators, investors, and ecosystem leaders.</p>
+      <ul class="list">
+        <li>Clarity at scale → Multi-country quantum data visualized through an intuitive globe and structured comparison views</li>
+        <li>Decision-focused design → Filters for readiness, funding, and region surface strategic opportunities and market gaps</li>
+        <li>Credibility through synthesis → Combines research, narrative, and product thinking into a single, trusted asset</li>
+      </ul>
+      <p><a href="https://impactquantum.com/GlobalReport/" target="_blank" rel="noopener noreferrer">View the Quantum Global Report</a></p>
+    </section>
+
+    <section id="newsletter" class="section">
+      <div class="kicker">Newsletter</div>
+      <h2>Tech Whispers: Signals From the Edge of Innovation</h2>
+      <p class="lede">Each issue translates fast-moving AI and quantum developments into practical strategic takeaways for leaders and teams.</p>
+      <p><a href="https://www.linkedin.com/newsletters/techwhispers-7066474645234839552/" target="_blank" rel="noopener noreferrer">Read Tech Whispers on LinkedIn</a></p>
+    </section>
+
+    <section id="explorer" class="section">
+      <div class="kicker">Interactive Explorer</div>
+      <h2>Explore My Work by Format</h2>
+      <p class="lede">Filter by format and open details only when you want them.</p>
+      <div class="filter-bar" role="tablist" aria-label="Content filters">
+        <button class="filter-btn is-active" data-filter="all" type="button">All</button>
+        <button class="filter-btn" data-filter="book" type="button">Books</button>
+        <button class="filter-btn" data-filter="article" type="button">Articles</button>
+        <button class="filter-btn" data-filter="podcast" type="button">Podcasts</button>
+      </div>
+      <div class="grid">
+        <article class="card explorer-card" data-type="book">
+          <span class="pill">Book</span>
+          <img class="book-thumb" src="LastStop.png" alt="Last Stop Duisburg jacket art" loading="lazy" />
+          <h3>Last Stop Duisburg</h3>
+          <p>A family story shaped by history, resilience, and remembrance.</p>
+          <details class="card-more">
+            <summary>View details</summary>
+            <p>This title demonstrates narrative depth and long-form writing range beyond technical content.</p>
+          </details>
+          <p><a href="https://www.amazon.ca/Last-Stop-Duisburg-familys-Holocaust/dp/B0B38CWZJL/" target="_blank" rel="noopener noreferrer">Open book</a></p>
+        </article>
+        <article class="card explorer-card" data-type="book">
+          <span class="pill">Book</span>
+          <img class="book-thumb" src="sentientmkt.png" alt="Foundations of Sentient Marketing jacket art" loading="lazy" />
+          <h3>Foundations of Sentient Marketing</h3>
+          <p>A framework for intelligent, human-centered marketing engagement.</p>
+          <details class="card-more">
+            <summary>View details</summary>
+            <p>Shows strategic positioning expertise and applied go-to-market thinking.</p>
+          </details>
+          <p><a href="https://www.amazon.ca/Foundations-Sentient-Marketing-Harnessing-Engagement/dp/B0D7VRPBL7/" target="_blank" rel="noopener noreferrer">Open book</a></p>
+        </article>
+        <article class="card explorer-card" data-type="book">
+          <span class="pill">Book</span>
+          <img class="book-thumb" src="QuantumCurious.png" alt="Quantum Curious jacket art" loading="lazy" />
+          <h3>Quantum Curious</h3>
+          <p>An accessible guide to understanding quantum computing and why it matters now.</p>
+          <details class="card-more">
+            <summary>View details</summary>
+            <p>Built for broad audiences who need practical clarity on the next computing revolution.</p>
+          </details>
+          <p><a href="https://www.amazon.ca/Quantum-Curious-Gateway-Computing-Revolution-ebook/dp/B0FG5HDLWJ/" target="_blank" rel="noopener noreferrer">Open book</a></p>
+        </article>
+        <article class="card explorer-card" data-type="book">
+          <span class="pill">Book</span>
+          <img class="book-thumb" src="QuantumSalesPlayform.png" alt="The Quantum Sales Playbook jacket art" loading="lazy" />
+          <h3>The Quantum Sales Playbook</h3>
+          <p>A practical framework for selling outcomes in complex, fast-changing markets.</p>
+          <details class="card-more">
+            <summary>View details</summary>
+            <p>Connects deep-tech value propositions to real business buying decisions and adoption.</p>
+          </details>
+          <p><a href="https://www.amazon.ca/Quantum-Sales-Playbook-Selling-Outcomes-ebook/dp/B0FR5YGFDR/" target="_blank" rel="noopener noreferrer">Open book</a></p>
+        </article>
+        <article class="card explorer-card" data-type="article">
+          <span class="pill">Article</span>
+          <h3>When You're the Only Girl in the Room</h3>
+          <p>A perspective on voice, visibility, and leadership in technical spaces.</p>
+          <details class="card-more">
+            <summary>View details</summary>
+            <p>Highlights thought leadership on inclusion and executive presence in high-stakes environments.</p>
+          </details>
+          <p><a href="https://www.linkedin.com/pulse/when-youre-only-girl-room-candace-gillhoolley-ttrvc/?trackingId=4hDRbO9mReiu2vslAC9Ayw%3D%3D" target="_blank" rel="noopener noreferrer">Read article</a></p>
+        </article>
+        <article class="card explorer-card" data-type="article">
+          <span class="pill">Article</span>
+          <h3>Quantum Leap North: Canada and Quebec at the Forefront of the Future</h3>
+          <p>An analysis of Canada and Quebec's position in the global quantum landscape and what it signals for future competitiveness.</p>
+          <details class="card-more">
+            <summary>View details</summary>
+            <p>Explores regional quantum competitiveness, ecosystem signals, and strategic positioning in North America.</p>
+          </details>
+          <p><a href="https://www.linkedin.com/pulse/quantum-leap-north-canada-quebec-forefront-future-candace-gillhoolley-xg4oe/?trackingId=y3ftLsb5SECrWTqa0onv7w%3D%3D" target="_blank" rel="noopener noreferrer">Read article</a></p>
+        </article>
+        <article class="card explorer-card" data-type="article">
+          <span class="pill">Article</span>
+          <h3>Quantum Computing's Noise Problem: Is Styrofoam the Solution?</h3>
+          <p>A practical exploration of an unexpected path to reducing quantum noise and improving system stability.</p>
+          <details class="card-more">
+            <summary>View details</summary>
+            <p>Breaks down an unconventional engineering angle and why it matters for practical quantum performance.</p>
+          </details>
+          <p><a href="https://www.linkedin.com/pulse/quantum-computing-noise-problem-styrofoam-solution-gillhoolley-x0ike/?trackingId=ZYe48HrKSWCL1EJp8FFvig%3D%3D" target="_blank" rel="noopener noreferrer">Read article</a></p>
+        </article>
+        <article class="card explorer-card" data-type="article">
+          <span class="pill">Article</span>
+          <h3>Behind Every Quantum Breakthrough Is an Engineering System No One Talks About</h3>
+          <p>A look at the infrastructure and execution behind visible quantum progress.</p>
+          <details class="card-more">
+            <summary>View details</summary>
+            <p>Positions you as a systems-level thinker who translates deep tech into practical strategy.</p>
+          </details>
+          <p><a href="https://impactquantum.com/behind-every-quantum-breakthrough-is-an-engineering-system-no-one-talks-about/" target="_blank" rel="noopener noreferrer">Read article</a></p>
+        </article>
+        <article class="card explorer-card" data-type="podcast">
+          <span class="pill">Podcast</span>
+          <img class="podcast-thumb" src="https://artwork.captivate.fm/d46f2b44-79e2-4b4f-a07e-2051d2cce8be/D1p5sWfqcxUvZO6bnJF-UFQB-facebook.png?1773867581" alt="Artwork for The Advent of Quantum Computing" loading="lazy" />
+          <h3>The Advent of Quantum Computing</h3>
+          <p>Practical implications and an accessible frame for quantum-curious audiences.</p>
+          <details class="card-more">
+            <summary>View details</summary>
+            <p>Demonstrates your ability to guide technical conversations for broader market understanding.</p>
+          </details>
+          <p><a href="https://player.captivate.fm/episode/3f0f20dc-e123-4997-934f-8f5efc8834f0/" target="_blank" rel="noopener noreferrer">Play episode</a></p>
+        </article>
+        <article class="card explorer-card" data-type="podcast">
+          <span class="pill">Podcast</span>
+          <img class="podcast-thumb" src="https://artwork.captivate.fm/855ea6dd-b640-41bd-a9d5-b933c8b7ec45/wiqcs1e1-facebook.png?1773867651" alt="Artwork for Before Titles and Credentials" loading="lazy" />
+          <h3>Before Titles and Credentials</h3>
+          <p>Women in Quantum episode focused on identity, voice, and impact.</p>
+          <details class="card-more">
+            <summary>View details</summary>
+            <p>Shows your range as both technical interviewer and host of values-driven conversations.</p>
+          </details>
+          <p><a href="https://player.captivate.fm/episode/40bc0116-c180-493a-865f-319684f595e5/" target="_blank" rel="noopener noreferrer">Play episode</a></p>
+        </article>
+        <article class="card explorer-card" data-type="podcast">
+          <span class="pill">Podcast</span>
+          <img class="podcast-thumb" src="https://artwork.captivate.fm/d5123752-53cd-4cf6-9bb8-047cb74b00b6/s3e23-facebook.png?1773932332" alt="Artwork for Schroedinger’s Graduate Student: Quantum AI with Michael Magid" loading="lazy" />
+          <h3>Schroedinger's Graduate Student: Quantum AI with Michael Magid</h3>
+          <p>A conversation on quantum AI, emerging research directions, and practical implications for the quantum ecosystem.</p>
+          <details class="card-more">
+            <summary>View details</summary>
+            <p>Explores graduate-level quantum AI perspectives and what they signal for future technical and commercial progress.</p>
+          </details>
+          <p><a href="https://player.captivate.fm/episode/89367188-1406-4647-bb24-d0e045ab7495/" target="_blank" rel="noopener noreferrer">Play episode</a></p>
+        </article>
+        <article class="card explorer-card" data-type="podcast">
+          <span class="pill">Podcast</span>
+          <img class="podcast-thumb" src="https://artwork.captivate.fm/e4a1909e-de5e-4c12-b529-28bf13db982a/s3e25-facebook.png?1773867642" alt="Artwork for When Energy Costs More Than Speed" loading="lazy" />
+          <h3>When Energy Costs More Than Speed</h3>
+          <p>A focused discussion on rethinking quantum computing tradeoffs and practical constraints.</p>
+          <details class="card-more">
+            <summary>View details</summary>
+            <p>Explores why energy and system design can matter as much as raw performance in real-world quantum adoption.</p>
+          </details>
+          <p><a href="https://player.captivate.fm/episode/57af9d11-e5e0-47de-a99c-9848210a668e/" target="_blank" rel="noopener noreferrer">Play episode</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="kicker">Professional Experience</div>
+      <h2>Experience Timeline</h2>
+      <p class="lede">Open each role to view outcomes and focus areas.</p>
+      <div class="timeline">
+        <details open>
+          <summary>Senior Customer Success & Revenue Growth Lead, Data-Driven Media (2024-Present)</summary>
+          <p>Increased retention by 18% through segmentation and personalized engagement. Led data-driven campaigns tied to revenue outcomes and built interactive experiences to improve product understanding.</p>
+        </details>
+        <details>
+          <summary>Community & Partner Marketing Manager, Kubuntu Focus (2023-2024)</summary>
+          <p>Ran multi-channel growth campaigns across SEO, paid media, and partnerships. Improved inbound traffic and engagement while scaling co-marketing execution in technical B2B audiences.</p>
+        </details>
+        <details>
+          <summary>PR & Community Relations Manager, Linux Foundation (2022-2023)</summary>
+          <p>Drove global community engagement and campaign performance. Built technical messaging frameworks that improved accessibility, adoption, and cross-functional collaboration.</p>
+        </details>
+        <details>
+          <summary>Business Development & Marketing Strategist, Manning Publications (2010-2022)</summary>
+          <p>Built full-funnel programs across content, email, webinars, SEO, and paid channels. Used CRM automation and segmentation to improve conversion and revenue performance.</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="proof" class="section">
+      <div class="kicker">Proof</div>
+      <h2>Impact Snapshot</h2>
+      <p class="lede">Resume and portfolio highlights in one view.</p>
+      <div class="metrics">
+        <div class="metric">
+          <strong>15+ Years</strong>
+          <span>Audience, content, and growth marketing leadership</span>
+        </div>
+        <div class="metric">
+          <strong>18% Lift</strong>
+          <span>Customer retention improvement via segmentation strategy</span>
+        </div>
+        <div class="metric">
+          <strong>4 Books</strong>
+          <span>Published across history, marketing, and quantum themes</span>
+        </div>
+        <div class="metric">
+          <strong>2 Shows</strong>
+          <span>Co-host, Impact Quantum Podcast | Host, Women in Quantum</span>
+        </div>
+        <div class="metric">
+          <strong>19,500</strong>
+          <span>LinkedIn network and professional community reach</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="kicker">Capabilities</div>
+      <h2>Core Skills, Tools, and AI Stack</h2>
+      <div class="skill-tabs">
+        <button class="skill-btn is-active" type="button" data-skill-panel="core">Core Skills</button>
+        <button class="skill-btn" type="button" data-skill-panel="tools">Technical Tools</button>
+        <button class="skill-btn" type="button" data-skill-panel="ai">AI & Automation</button>
+      </div>
+      <div class="skill-panel is-active" id="skill-core">
+        <div class="grid">
+          <article class="card"><h3>Audience & Lifecycle Growth</h3><p>Audience growth strategy, lifecycle marketing, retention, segmentation, and personalization.</p></article>
+          <article class="card"><h3>Content-Led Demand</h3><p>Thought leadership platforms, ecosystem storytelling, campaign strategy, and cross-channel distribution.</p></article>
+          <article class="card"><h3>Community & Developer Marketing</h3><p>Community-led growth, partner collaboration, and technical audience engagement programs.</p></article>
+          <article class="card"><h3>Operations & Analytics</h3><p>KPI tracking, marketing operations, automation workflows, and ROI optimization.</p></article>
+        </div>
+      </div>
+      <div class="skill-panel" id="skill-tools">
+        <div class="badge-row">
+          <span class="badge">GA4</span>
+          <span class="badge">Google Ads</span>
+          <span class="badge">LinkedIn Campaign Manager</span>
+          <span class="badge">Meta Business Suite</span>
+          <span class="badge">Salesforce</span>
+          <span class="badge">HubSpot</span>
+          <span class="badge">Mailchimp</span>
+          <span class="badge">WordPress</span>
+          <span class="badge">Looker Studio</span>
+          <span class="badge">Smartsheet</span>
+          <span class="badge">SharePoint</span>
+          <span class="badge">Adobe Creative Suite</span>
+        </div>
+      </div>
+      <div class="skill-panel" id="skill-ai">
+        <div class="badge-row">
+          <span class="badge">Claude</span>
+          <span class="badge">Google Gemini</span>
+          <span class="badge">Microsoft Copilot</span>
+          <span class="badge">Perplexity</span>
+          <span class="badge">Meta AI</span>
+          <span class="badge">DeepSeek</span>
+          <span class="badge">Duck.ai</span>
+          <span class="badge">Brave Leo</span>
+          <span class="badge">YouChat</span>
+          <span class="badge">Grok</span>
+          <span class="badge">Flowise AI</span>
+          <span class="badge">AutoGen</span>
+          <span class="badge">Midjourney</span>
+          <span class="badge">Stable Diffusion</span>
+          <span class="badge">Poe</span>
+          <span class="badge">Jan.ai</span>
+          <span class="badge">Indus AI</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="kicker">Contact</div>
+      <h2>Let’s Build Something That Stands Out</h2>
+      <p class="lede">If you’re hiring, collaborating, or launching a project, I’d love to connect.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="https://www.linkedin.com/in/candacegillhoolley" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+        <a class="btn secondary" href="https://impactquantum.com" target="_blank" rel="noopener noreferrer">Visit ImpactQuantum.com</a>
+        <a class="btn secondary" href="resume.html" target="_blank" rel="noopener noreferrer">View Resume</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">Candace Gillhoolley Portfolio</div>
+  </footer>
+  <script>
+    (function () {
+      const buttons = document.querySelectorAll(".filter-btn");
+      const cards = document.querySelectorAll(".explorer-card");
+      const skillButtons = document.querySelectorAll(".skill-btn");
+      const skillPanels = document.querySelectorAll(".skill-panel");
+      if (buttons.length && cards.length) {
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const filter = button.getAttribute("data-filter");
+            buttons.forEach((b) => b.classList.remove("is-active"));
+            button.classList.add("is-active");
+
+            cards.forEach((card) => {
+              const type = card.getAttribute("data-type");
+              const show = filter === "all" || type === filter;
+              card.hidden = !show;
+            });
+          });
+        });
+      }
+
+      if (skillButtons.length && skillPanels.length) {
+        skillButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const target = button.getAttribute("data-skill-panel");
+            skillButtons.forEach((b) => b.classList.remove("is-active"));
+            button.classList.add("is-active");
+            skillPanels.forEach((panel) => {
+              panel.classList.toggle("is-active", panel.id === "skill-" + target);
+            });
+          });
+        });
+      }
+
+      const revealTargets = document.querySelectorAll(
+        ".section, .card, .metric, .timeline details, .career-node"
+      );
+      revealTargets.forEach((el) => el.classList.add("reveal"));
+
+      if (!("IntersectionObserver" in window)) {
+        revealTargets.forEach((el) => el.classList.add("is-visible"));
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      );
+
+      revealTargets.forEach((el) => observer.observe(el));
+    })();
+  </script>
+</body>
+</html>
+
