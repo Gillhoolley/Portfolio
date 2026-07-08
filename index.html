@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Candace Gillhoolley | Portfolio</title>
   <meta name="description" content="Candace Gillhoolley portfolio: quantum, AI, thought leadership, podcasting, and strategic content systems." />
+  <meta name="author" content="Candace Gillhoolley" />
+  <meta property="og:title" content="Candace Gillhoolley | Portfolio" />
+  <meta property="og:description" content="Quantum, AI, thought leadership, podcasting, and strategic content systems by Candace Gillhoolley." />
+  <meta property="og:type" content="profile" />
+  <meta property="og:image" content="candace.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Candace Gillhoolley | Portfolio" />
+  <meta name="twitter:description" content="Quantum, AI, thought leadership, podcasting, and strategic content systems by Candace Gillhoolley." />
+  <meta name="twitter:image" content="candace.jpg" />
+  <link rel="icon" href="candace.jpg" type="image/jpeg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -301,7 +311,7 @@
 
     .metrics {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 12px;
       margin-top: 12px;
     }
@@ -461,6 +471,11 @@
       width: 100%;
     }
 
+    .explorer-card[data-type="short"] {
+      grid-column: span 3;
+      width: 100%;
+    }
+
     .explorer-card[hidden] {
       display: none;
     }
@@ -507,12 +522,17 @@
       .explorer-card[data-type="book"] { grid-column: span 12; width: 100%; }
       .explorer-card[data-type="article"] { grid-column: span 12; width: 100%; }
       .explorer-card[data-type="podcast"] { grid-column: span 12; width: 100%; }
+      .explorer-card[data-type="short"] { grid-column: span 12; width: 100%; }
       .hero-layout { grid-template-columns: 1fr; }
       .hero-media { justify-self: start; }
       .hero-photo { max-width: 180px; }
       .section { padding: 24px 0; }
       .hero { padding-top: 24px; }
       .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 560px) {
+      .metrics { grid-template-columns: 1fr; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -555,7 +575,7 @@
           </div>
         </div>
         <div class="hero-media">
-          <img class="hero-photo" src="candace.jpg" alt="Candace Gillhoolley portrait" loading="lazy" />
+          <img class="hero-photo" src="candace.jpg" alt="Candace Gillhoolley portrait" width="325" height="394" fetchpriority="high" decoding="async" />
         </div>
       </div>
       <p class="support">Montreal, Canada | 15+ years in audience, content, and growth marketing | 4 published books | Co-host, Impact Quantum Podcast | Host, Women in Quantum</p>
@@ -636,16 +656,17 @@
       <div class="kicker">Interactive Explorer</div>
       <h2>Explore My Work by Format</h2>
       <p class="lede">Filter by format and open details only when you want them.</p>
-      <div class="filter-bar" role="tablist" aria-label="Content filters">
+      <div class="filter-bar" role="group" aria-label="Content filters">
         <button class="filter-btn is-active" data-filter="all" type="button">All</button>
         <button class="filter-btn" data-filter="book" type="button">Books</button>
         <button class="filter-btn" data-filter="article" type="button">Articles</button>
         <button class="filter-btn" data-filter="podcast" type="button">Podcasts</button>
+        <button class="filter-btn" data-filter="short" type="button">Shorts</button>
       </div>
       <div class="grid">
         <article class="card explorer-card" data-type="book">
           <span class="pill">Book</span>
-          <img class="book-thumb" src="LastStop.png" alt="Last Stop Duisburg jacket art" loading="lazy" />
+          <img class="book-thumb" src="LastStop.png" alt="Last Stop Duisburg jacket art" width="302" height="459" loading="lazy" decoding="async" />
           <h3>Last Stop Duisburg</h3>
           <p>A family story shaped by history, resilience, and remembrance.</p>
           <details class="card-more">
@@ -656,7 +677,7 @@
         </article>
         <article class="card explorer-card" data-type="book">
           <span class="pill">Book</span>
-          <img class="book-thumb" src="sentientmkt.png" alt="Foundations of Sentient Marketing jacket art" loading="lazy" />
+          <img class="book-thumb" src="sentientmkt.png" alt="Foundations of Sentient Marketing jacket art" width="306" height="460" loading="lazy" decoding="async" />
           <h3>Foundations of Sentient Marketing</h3>
           <p>A framework for intelligent, human-centered marketing engagement.</p>
           <details class="card-more">
@@ -667,7 +688,7 @@
         </article>
         <article class="card explorer-card" data-type="book">
           <span class="pill">Book</span>
-          <img class="book-thumb" src="QuantumCurious.png" alt="Quantum Curious jacket art" loading="lazy" />
+          <img class="book-thumb" src="QuantumCurious.png" alt="Quantum Curious jacket art" width="301" height="484" loading="lazy" decoding="async" />
           <h3>Quantum Curious</h3>
           <p>An accessible guide to understanding quantum computing and why it matters now.</p>
           <details class="card-more">
@@ -678,7 +699,7 @@
         </article>
         <article class="card explorer-card" data-type="book">
           <span class="pill">Book</span>
-          <img class="book-thumb" src="QuantumSalesPlayform.png" alt="The Quantum Sales Playbook jacket art" loading="lazy" />
+          <img class="book-thumb" src="QuantumSalesPlayform.png" alt="The Quantum Sales Playbook jacket art" width="297" height="486" loading="lazy" decoding="async" />
           <h3>The Quantum Sales Playbook</h3>
           <p>A practical framework for selling outcomes in complex, fast-changing markets.</p>
           <details class="card-more">
@@ -729,7 +750,7 @@
         </article>
         <article class="card explorer-card" data-type="podcast">
           <span class="pill">Podcast</span>
-          <img class="podcast-thumb" src="https://artwork.captivate.fm/d46f2b44-79e2-4b4f-a07e-2051d2cce8be/D1p5sWfqcxUvZO6bnJF-UFQB-facebook.png?1773867581" alt="Artwork for The Advent of Quantum Computing" loading="lazy" />
+          <img class="podcast-thumb" src="https://artwork.captivate.fm/d46f2b44-79e2-4b4f-a07e-2051d2cce8be/D1p5sWfqcxUvZO6bnJF-UFQB-facebook.png?1773867581" alt="Artwork for The Advent of Quantum Computing" width="1200" height="630" loading="lazy" decoding="async" />
           <h3>The Advent of Quantum Computing</h3>
           <p>Practical implications and an accessible frame for quantum-curious audiences.</p>
           <details class="card-more">
@@ -740,7 +761,7 @@
         </article>
         <article class="card explorer-card" data-type="podcast">
           <span class="pill">Podcast</span>
-          <img class="podcast-thumb" src="https://artwork.captivate.fm/855ea6dd-b640-41bd-a9d5-b933c8b7ec45/wiqcs1e1-facebook.png?1773867651" alt="Artwork for Before Titles and Credentials" loading="lazy" />
+          <img class="podcast-thumb" src="https://artwork.captivate.fm/855ea6dd-b640-41bd-a9d5-b933c8b7ec45/wiqcs1e1-facebook.png?1773867651" alt="Artwork for Before Titles and Credentials" width="1200" height="630" loading="lazy" decoding="async" />
           <h3>Before Titles and Credentials</h3>
           <p>Women in Quantum episode focused on identity, voice, and impact.</p>
           <details class="card-more">
@@ -751,7 +772,7 @@
         </article>
         <article class="card explorer-card" data-type="podcast">
           <span class="pill">Podcast</span>
-          <img class="podcast-thumb" src="https://artwork.captivate.fm/d5123752-53cd-4cf6-9bb8-047cb74b00b6/s3e23-facebook.png?1773932332" alt="Artwork for Schroedinger’s Graduate Student: Quantum AI with Michael Magid" loading="lazy" />
+          <img class="podcast-thumb" src="https://artwork.captivate.fm/d5123752-53cd-4cf6-9bb8-047cb74b00b6/s3e23-facebook.png?1773932332" alt="Artwork for Schroedinger’s Graduate Student: Quantum AI with Michael Magid" width="1200" height="630" loading="lazy" decoding="async" />
           <h3>Schroedinger's Graduate Student: Quantum AI with Michael Magid</h3>
           <p>A conversation on quantum AI, emerging research directions, and practical implications for the quantum ecosystem.</p>
           <details class="card-more">
@@ -762,7 +783,7 @@
         </article>
         <article class="card explorer-card" data-type="podcast">
           <span class="pill">Podcast</span>
-          <img class="podcast-thumb" src="https://artwork.captivate.fm/e4a1909e-de5e-4c12-b529-28bf13db982a/s3e25-facebook.png?1773867642" alt="Artwork for When Energy Costs More Than Speed" loading="lazy" />
+          <img class="podcast-thumb" src="https://artwork.captivate.fm/e4a1909e-de5e-4c12-b529-28bf13db982a/s3e25-facebook.png?1773867642" alt="Artwork for When Energy Costs More Than Speed" width="1200" height="630" loading="lazy" decoding="async" />
           <h3>When Energy Costs More Than Speed</h3>
           <p>A focused discussion on rethinking quantum computing tradeoffs and practical constraints.</p>
           <details class="card-more">
@@ -771,9 +792,9 @@
           </details>
           <p><a href="https://player.captivate.fm/episode/57af9d11-e5e0-47de-a99c-9848210a668e/" target="_blank" rel="noopener noreferrer">Play episode</a></p>
         </article>
-        <article class="card explorer-card" data-type="podcast">
+        <article class="card explorer-card" data-type="short">
           <span class="pill">YouTube Short</span>
-          <img class="short-thumb" src="https://i.ytimg.com/vi/OcIUtkqKgiw/hqdefault.jpg" alt="YouTube Short thumbnail for OcIUtkqKgiw" loading="lazy" />
+          <img class="short-thumb" src="https://i.ytimg.com/vi/OcIUtkqKgiw/hqdefault.jpg" alt="YouTube Short thumbnail for OcIUtkqKgiw" width="480" height="360" loading="lazy" decoding="async" />
           <h3>Quantum Sensing Explained: Exploring Quantum's Secrets</h3>
           <p>A quick primer on quantum sensing and why these ultra-precise measurements matter in real-world applications.</p>
           <details class="card-more">
@@ -782,9 +803,9 @@
           </details>
           <p><a href="https://youtube.com/shorts/OcIUtkqKgiw?feature=share" target="_blank" rel="noopener noreferrer">Watch short</a></p>
         </article>
-        <article class="card explorer-card" data-type="podcast">
+        <article class="card explorer-card" data-type="short">
           <span class="pill">YouTube Short</span>
-          <img class="short-thumb" src="https://i.ytimg.com/vi/bXMPyodp8OU/hqdefault.jpg" alt="YouTube Short thumbnail for bXMPyodp8OU" loading="lazy" />
+          <img class="short-thumb" src="https://i.ytimg.com/vi/bXMPyodp8OU/hqdefault.jpg" alt="YouTube Short thumbnail for bXMPyodp8OU" width="480" height="360" loading="lazy" decoding="async" />
           <h3>Quantum Computing: Is It Real? Future Jobs & Trends</h3>
           <p>A fast look at where quantum computing stands today and what it could mean for future roles and career paths.</p>
           <details class="card-more">
@@ -793,9 +814,9 @@
           </details>
           <p><a href="https://youtube.com/shorts/bXMPyodp8OU?feature=share" target="_blank" rel="noopener noreferrer">Watch short</a></p>
         </article>
-        <article class="card explorer-card" data-type="podcast">
+        <article class="card explorer-card" data-type="short">
           <span class="pill">YouTube Short</span>
-          <img class="short-thumb" src="https://i.ytimg.com/vi/TZ4gK1SXOdw/hqdefault.jpg" alt="YouTube Short thumbnail for TZ4gK1SXOdw" loading="lazy" />
+          <img class="short-thumb" src="https://i.ytimg.com/vi/TZ4gK1SXOdw/hqdefault.jpg" alt="YouTube Short thumbnail for TZ4gK1SXOdw" width="480" height="360" loading="lazy" decoding="async" />
           <h3>Early Stage Investing: AI vs. Quantum & Getting Your Money Back</h3>
           <p>Compares early-stage AI and quantum bets with a practical angle on timelines, risk, and return expectations.</p>
           <details class="card-more">
@@ -804,9 +825,9 @@
           </details>
           <p><a href="https://youtube.com/shorts/TZ4gK1SXOdw?feature=share" target="_blank" rel="noopener noreferrer">Watch short</a></p>
         </article>
-        <article class="card explorer-card" data-type="podcast">
+        <article class="card explorer-card" data-type="short">
           <span class="pill">YouTube Short</span>
-          <img class="short-thumb" src="https://i.ytimg.com/vi/WUKBxOtKL_U/hqdefault.jpg" alt="YouTube Short thumbnail for WUKBxOtKL_U" loading="lazy" />
+          <img class="short-thumb" src="https://i.ytimg.com/vi/WUKBxOtKL_U/hqdefault.jpg" alt="YouTube Short thumbnail for WUKBxOtKL_U" width="480" height="360" loading="lazy" decoding="async" />
           <h3>Neutral Atoms: Exploring Quantum Computing With Single Atoms</h3>
           <p>Introduces neutral-atom quantum computing and explains why single-atom control is a promising approach.</p>
           <details class="card-more">
