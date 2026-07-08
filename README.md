@@ -14,19 +14,17 @@ Open `index.html` in a browser. No build step or local server is required.
 
 ## Current section order
 1. Hero
-2. Credibility
-3. Why I am Different
-4. Career Highlights
-5. Quantum Global Report
-6. Tech Whispers
-7. Interactive Work Explorer
-8. Professional Experience
-9. Impact Snapshot
-10. Core Skills, Tools, and AI Stack
-11. Contact
+2. Portfolio Metrics
+3. Selected Work
+4. Why It Works
+5. Quantum Global Report Case Study
+6. Experience
+7. Work Archive
+8. Core Skills, Tools, and AI Stack
+9. Contact
 
 ## Notes
-- Typography uses `Fraunces` and `Manrope` via Google Fonts.
+- Typography uses `Fraunces` and `Inter` via Google Fonts.
 - Colors and layout are defined with CSS variables in `:root`.
 - The work explorer filters books, articles, podcasts, and YouTube Shorts.
 - The page includes Open Graph and Twitter Card metadata for cleaner link previews.
